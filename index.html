@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our tasky taskies 💖</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-pink-50">
+  <div class="container mx-auto p-4">
+    <h1 class="text-4xl font-bold text-center text-pink-600 my-8">Tasky Tasky  💑</h1>
+
+    <div class="flex border-b mb-4 justify-center">
+      <button class="tab-button" onclick="openTab('tasks')">📝 Tasks</button>
+      <button class="tab-button" onclick="openTab('complaints')">😤 Complaints</button>
+      <button class="tab-button" onclick="openTab('wishlist')">🎁 Wishlist</button>
+      <button class="tab-button" onclick="openTab('gallery')">📸 Gallery</button>
+    </div>
+
+    <div id="tasks" class="tab-content">
+      <h2>Our To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Add something sweet to do 💕" />
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+
+    <div id="complaints" class="tab-content hidden">
+      <h2>Complaints Zone (Meri Complaint karoge heh )</h2>
+      <input type="text" id="complaintInput" placeholder="Bako paaji" />
+      <button onclick="addComplaint()">Add Complaint</button>
+      <ul id="complaintList"></ul>
+    </div>
+
+    <div id="wishlist" class="tab-content hidden">
+      <h2>Our Future Plans</h2>
+      <input type="text" id="wishInput" placeholder="What I want to do with youuu" />
+      <button onclick="addWish()">Kya kroge UwU</button>
+      <ul id="wishList"></ul>
+    </div>
+
+    <div id="gallery" class="tab-content hidden">
+      <h2>Memoriessss (abhi mat dalna kuch in progress)</h2>
+      <input type="file" id="imageUpload" accept="image/*" />
+      <div id="galleryPreview" class="gallery-preview"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

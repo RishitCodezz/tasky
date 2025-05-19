@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love App Login 💌</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-pink-50 text-center p-10">
+  <h1 class="text-3xl mb-4">Welcome, lovebirds 🕊️</h1>
+  <input id="email" type="email" placeholder="Your email" class="p-2 rounded"><br><br>
+  <input id="password" type="password" placeholder="Password" class="p-2 rounded"><br><br>
+  <button onclick="login()" class="bg-pink-500 text-white px-4 py-2 rounded">Log In</button>
+
+  <p id="error" class="text-red-500 mt-4"></p>
+
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+  <script src="firebase.js"></script>
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+
+      firebase.auth().signInWithEmailAndPassword(email, pass)
+        .then(() => {
+          window.location.href = "index.html";
+        })
+        .catch(error => {
+          document.getElementById("error").innerText = error.message;
+        });
+    }
+  </script>
+</body>
+</html>
